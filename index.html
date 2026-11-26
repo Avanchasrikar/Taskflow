@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | Kanban Workspace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="brand">
+            <div class="logo">T</div>
+            <div>
+                <h1>TaskFlow</h1>
+                <p>Collaborative Sprint & Kanban Workspace</p>
+            </div>
+        </div>
+
+        <div class="workspace">
+            My Workspace
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Dashboard Heading -->
+        <section class="dashboard-heading">
+            <span class="subtitle">PROJECT MANAGEMENT</span>
+            <h2>Kanban Board</h2>
+            <p>Organize your tasks, manage priorities and track your progress.</p>
+        </section>
+
+        <!-- Dashboard Statistics -->
+        <section class="statistics">
+
+            <div class="stat-card">
+                <p>Total Tasks</p>
+                <h2>6</h2>
+            </div>
+
+            <div class="stat-card stat-todo">
+                <p>To Do</p>
+                <h2>3</h2>
+            </div>
+
+            <div class="stat-card stat-progress">
+                <p>In Progress</p>
+                <h2>2</h2>
+            </div>
+
+            <div class="stat-card stat-done">
+                <p>Completed</p>
+                <h2>1</h2>
+            </div>
+
+        </section>
+
+        <!-- Add Task Form -->
+        <section class="task-section">
+            <h3>Create a new task</h3>
+
+            <form id="task-form" class="task-form">
+
+                <input
+                    type="text"
+                    id="task-input"
+                    placeholder="Enter task title..."
+                    aria-label="Task title"
+                    required
+                >
+
+                <select id="priority-select" aria-label="Task priority">
+                    <option value="low">Low Priority</option>
+                    <option value="medium" selected>Medium Priority</option>
+                    <option value="high">High Priority</option>
+                </select>
+
+                <input
+                    type="date"
+                    id="due-date"
+                    aria-label="Due date"
+                >
+
+                <button type="button" id="add-task-btn" class="add-btn">
+                    + Add Task
+                </button>
+
+            </form>
+        </section>
+
+        <!-- Kanban Board -->
+        <section class="board">
+
+            <!-- To Do Column -->
+            <section class="column" id="todo">
+
+                <div class="column-header todo-header">
+                    <h3>
+                        <span class="status-dot todo-dot"></span>
+                        To Do
+                    </h3>
+                    <span class="task-count">3</span>
+                </div>
+
+                <div class="task-list">
+
+                    <article class="task-card">
+                        <span class="task-id">TASK-001</span>
+                        <h4 class="task-title">Design Login Page</h4>
+                        <p class="task-description">
+                            Create a clean and responsive login interface.
+                        </p>
+                        <div class="task-footer">
+                            <span class="priority priority-high">High</span>
+                            <time class="due-date" datetime="2026-11-28">
+                                📅 Nov 28
+                            </time>
+                        </div>
+                    </article>
+
+                    <article class="task-card">
+                        <span class="task-id">TASK-002</span>
+                        <h4 class="task-title">Create Database Schema</h4>
+                        <p class="task-description">
+                            Plan database tables and their relationships.
+                        </p>
+                        <div class="task-footer">
+                            <span class="priority priority-medium">Medium</span>
+                            <time class="due-date" datetime="2026-11-29">
+                                📅 Nov 29
+                            </time>
+                        </div>
+                    </article>
+
+                    <article class="task-card">
+                        <span class="task-id">TASK-003</span>
+                        <h4 class="task-title">Write Documentation</h4>
+                        <p class="task-description">
+                            Prepare the project overview and setup instructions.
+                        </p>
+                        <div class="task-footer">
+                            <span class="priority priority-low">Low</span>
+                            <time class="due-date" datetime="2026-11-30">
+                                📅 Nov 30
+                            </time>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- In Progress Column -->
+            <section class="column" id="in-progress">
+
+                <div class="column-header progress-header">
+                    <h3>
+                        <span class="status-dot progress-dot"></span>
+                        In Progress
+                    </h3>
+                    <span class="task-count">2</span>
+                </div>
+
+                <div class="task-list">
+
+                    <article class="task-card">
+                        <span class="task-id">TASK-004</span>
+                        <h4 class="task-title">Develop Navigation Bar</h4>
+                        <p class="task-description">
+                            Build a responsive navigation component.
+                        </p>
+                        <div class="task-footer">
+                            <span class="priority priority-medium">Medium</span>
+                            <time class="due-date" datetime="2026-11-28">
+                                📅 Nov 28
+                            </time>
+                        </div>
+                    </article>
+
+                    <article class="task-card">
+                        <span class="task-id">TASK-005</span>
+                        <h4 class="task-title">Build Dashboard Layout</h4>
+                        <p class="task-description">
+                            Implement the main dashboard using CSS Grid.
+                        </p>
+                        <div class="task-footer">
+                            <span class="priority priority-high">High</span>
+                            <time class="due-date" datetime="2026-11-30">
+                                📅 Nov 30
+                            </time>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Done Column -->
+            <section class="column" id="done">
+
+                <div class="column-header done-header">
+                    <h3>
+                        <span class="status-dot done-dot"></span>
+                        Done
+                    </h3>
+                    <span class="task-count">1</span>
+                </div>
+
+                <div class="task-list">
+
+                    <article class="task-card">
+                        <span class="task-id">TASK-006</span>
+                        <h4 class="task-title">Initialize Project</h4>
+                        <p class="task-description">
+                            Create the project folder and initialize Git.
+                        </p>
+                        <div class="task-footer">
+                            <span class="priority priority-low">Low</span>
+                            <time class="due-date" datetime="2026-11-26">
+                                📅 Nov 26
+                            </time>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>TaskFlow © 2026 | Built for SkillMe Full Stack Engineer Internship</p>
+        <p>Week 1 — Kanban Board Layout</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
